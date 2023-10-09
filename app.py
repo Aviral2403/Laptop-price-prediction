@@ -14,10 +14,12 @@ Company = st.selectbox('Company',df['Company'].unique())
 Type = st.selectbox('Type',df['TypeName'].unique())
 Ram = st.selectbox('Ram',[2,4,6,8,12,16,24,32,64])
 Weight = st.number_input('Weight of the Laptop')
-TouchScreen = st.selectbox('TouchScreen',['Yes','No'])
+if Weight <= 0.0:
+    st.error("Please enter a valid Weight for the laptop.")TouchScreen = st.selectbox('TouchScreen',['Yes','No'])
 Ips = st.selectbox('IPS',['Yes','No'])
 ScreenSize = st.number_input('Screen Size')
-Resolution = st.selectbox('Screen Resolution',['1920x1080','1366x768','1600x900',
+if ScreenSize <= 0.0:
+    st.error("Please enter a valid ScreenSize for the laptop.")Resolution = st.selectbox('Screen Resolution',['1920x1080','1366x768','1600x900',
                                                '3840x2160','3200x1800','2880x1800','2560x1600',
                                                '2560x1440','2304x1440'])
 CpuBrand = st.selectbox('CPU Brand',df['Cpu brand'].unique())
